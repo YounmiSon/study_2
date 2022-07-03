@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+    position: absolute;
+    left: 70px;
+    top: 70px;
+    width: 60px;
+    height: 60px;
+    background-color: transparent; /* 벡터 이미지 배경이 투명하게 되도록 배경색 지움 */
+    offset: path('M0,100c10,-50 82.095,-82.507 127.089,0c19.734,-79.314 119.195,-102.241 151.559,0c5.526,-77.735 101.322,-104.262 149.192,-52.888') auto;
+    animation: moveto 5s ease-in-out;
+}
+.box::after{
+    content: url(squircle.svg); /* 애니메이션 되는 벡터 이미지 */
+    display: block;
+}
+@keyframes moveto{
+    0%{
+        offset-distance: 0%
+    }
+    100%{
+        offset-distance: 100%;
+    }
+}
+</style>
+<body>
+    <div class="box"></div>
+</body>
+</html>
