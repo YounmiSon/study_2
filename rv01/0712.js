@@ -115,7 +115,7 @@ const userr ={
 }
 console.log(userr) //{5: 5, name : "miike", age : 30}
 
-//예제2 - 어떤게 key가 될지 모르는 객체를 만들 때 융ㅇ
+//예제2 - 어떤게 key가 될지 모르는 객체를 만들 때 이용
 function makeObj(key, val){
        return{
         [key]: val,
@@ -124,3 +124,61 @@ function makeObj(key, val){
 
     const obj = makeobj("나이",33);
     console.log(obj); //{나이 : 33}
+
+
+//심볼
+//지금까지 객체는 property key 문자형으로 만들었음
+//const a = Symbol(); 
+//const b = Symbol(); 
+//생긴건 같지만 a === b; 하면 false를 반환한다 즉 유일한 식별자로, 유일성이 보장된다
+
+const id = Symbol('id')
+const useer ={
+   name: 'mike',
+   age : 30,
+   [id] : 'myid'
+}
+
+//결과
+//{~~ , Symbol(id): "myid"}
+//근데 Object.keys() 이런 객체 메서드 쓰면 출력이 안됨! 꽁꽁 숨겨져있음
+//특정 객체의 원본 데이터를 건드리지 않고 추가할 수 있다
+
+Symbol.for() //전역 심볼
+//하나의 심볼만 보장받을 수 있음
+//없으면 만들고, 있으면 가져오기 때문
+//Symbol함수는 매번 다른 symbol 값을 생성하지만
+//Symbol.for 메서드는 하나를 생성한 뒤 키를 통해 같은 Symbol을 공유
+Symbol.keyFor() //안에 변수를 넣어주면 이름을 출력해줌
+
+//다른 개발자가 만들어 놓은 객체
+const happy = {
+   name: "mike",
+   age: 40,
+}
+
+//내가 추가하는 작업
+const showname = Symbol("showname")
+happy[showname]=function(){
+   console.log(this.name)
+}
+
+happy[showName]();
+
+//사용자가 접속하면 보는 메세지
+for(let key in user){
+   console.log(`His ${key} is ${user[key]}.`)
+}
+
+//배열
+//splice 특정 요소 지우고 추가
+//slice n부터 m까지 반환
+
+//forEach()
+let arrr = ["a", "b","c"]
+
+arrr.forEach((alphabet, index)=>{
+   console.log(`${index +1}, ${alphabet}`)
+})
+
+//1, a 2, b 3,c
