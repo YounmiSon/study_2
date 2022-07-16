@@ -69,3 +69,10 @@ for (let z = 0; z < 5; z++) {
 }
 
 //10871
+let A = [1, 10, 4, 9, 2, 3, 8, 5, 7, 6]
+let N = 10;
+let X = 5;
+
+for(let b = 0; b < A.length; b++){
+    
+}
