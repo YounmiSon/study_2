@@ -49,23 +49,40 @@ for (let e = 1; e < 5; e++) {
     console.log("Case #" + e + ": " + q + " + " + w + " = " + rst)
 }
 
-//2438 ★
-for (let u = 0; u < 5; u++) {
-    for (let y = 0; y <= u; y++) {
-        document.write('*')
-    }
-    document.write('<br>')
+// //2438 ★
+// for (let u = 0; u < 5; u++) {
+//     for (let y = 0; y <= u; y++) {
+//         document.write('*')
+//     }
+//     document.write('<br>')
+// }
+
+// //2439
+// for (let z = 0; z < 5; z++) {
+//     for (let x = 4; x > z; x--) {
+//         document.write('&nbsp')
+//     }
+//     for (let x = 0; x <= z; x++) {
+//         document.write('*')
+//     }
+//     document.write('<br>')
+// }
+
+//별찍기 repeat 사용
+for (let star = 1; star <= 5; star += 1) {
+    console.log('*'.repeat(star));
 }
 
-//2439
-for (let z = 0; z < 5; z++) {
-    for (let x = 4; x > z; x--) {
-        document.write('&nbsp')
-    }
-    for (let x = 0; x <= z; x++) {
-        document.write('*')
-    }
-    document.write('<br>')
+for (let star = 5; star >= 1; star -= 1) {
+    console.log('*'.repeat(star))
+}
+
+for (let star = 5; star >= 1; star -= 1) {
+    console.log(' '.repeat(5 - star) + '*'.repeat(star))
+}
+
+for (let star = 0; star < 5; star += 1) {
+    console.log('*'.repeat(star + 1))
 }
 
 //10871
@@ -73,6 +90,6 @@ let A = [1, 10, 4, 9, 2, 3, 8, 5, 7, 6]
 let N = 10;
 let X = 5;
 
-for(let b = 0; b < A.length; b++){
-    
+for (let b = 0; b < A.length; b++) {
+
 }
